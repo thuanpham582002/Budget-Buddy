@@ -6,5 +6,4 @@
     tools:context=".presentation.ui.wallet.WalletFragment">
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
