@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="body_1">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="body_2">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="body_3">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="body_4">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="body_5">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="bottom_navigation_view_text_active">
+        <item name="android:textAppearance">@style/body_1</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="bottom_navigation_view_text_inactive">
+        <item name="android:textAppearance">@style/body_1</item>
+        <item name="android:textColor">@color/pink_1</item>
+    </style>
+
+    <style name="bottom_navigation_view" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/white</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemTextAppearanceActive">@style/bottom_navigation_view_text_active</item>
+        <item name="itemTextAppearanceInactive">@style/bottom_navigation_view_text_inactive</item>
+        <item name="itemTextAppearanceActiveBoldEnabled">false</item>
+    </style>
+
+    <style name="card_view_more" parent="CardView">
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="constraint_layout_item_more">
+        <item name="android:background">@color/pink_2</item>
+        <item name="android:padding">16dp</item>
+    </style>
+</resources>
