@@ -68,6 +68,9 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     testImplementation(libs.androidx.room.testing)
     implementation(libs.androidx.room.paging)
+
+    // Glide
+    implementation(libs.glide)
 }
 
 kapt {
