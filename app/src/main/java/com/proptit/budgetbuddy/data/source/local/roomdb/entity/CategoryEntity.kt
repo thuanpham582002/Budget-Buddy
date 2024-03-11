@@ -3,6 +3,7 @@ package com.proptit.budgetbuddy.data.source.local.roomdb.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.proptit.budgetbuddy.domain.model.CategoryType
 
 @Entity(tableName = "categories")
 data class CategoryEntity(
@@ -16,5 +17,5 @@ data class CategoryEntity(
     @ColumnInfo(name = "icon_url")
     val iconUrl: String,
     @ColumnInfo(name = "type")
-    val type: Int
+    val type: CategoryType
 )

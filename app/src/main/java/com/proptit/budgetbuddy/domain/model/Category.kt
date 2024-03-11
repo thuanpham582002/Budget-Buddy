@@ -5,5 +5,5 @@ data class Category(
     val userId: Int,
     val name: String,
     val iconUrl: String,
-    val type: Int
+    val type: CategoryType
 )
