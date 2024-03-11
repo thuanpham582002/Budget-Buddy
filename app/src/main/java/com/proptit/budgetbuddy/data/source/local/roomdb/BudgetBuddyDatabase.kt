@@ -6,10 +6,11 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.proptit.budgetbuddy.data.source.local.roomdb.converter.DateConverter
 import com.proptit.budgetbuddy.data.source.local.roomdb.dao.UserDao
+import com.proptit.budgetbuddy.data.source.local.roomdb.entity.CategoryEntity
 import com.proptit.budgetbuddy.data.source.local.roomdb.entity.UserEntity
 
 @Database(
-    entities = [UserEntity::class],
+    entities = [UserEntity::class, CategoryEntity::class],
     version = 1
 )
 @TypeConverters(DateConverter::class)
