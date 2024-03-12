@@ -5,4 +5,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink_1">#F06292</color>
     <color name="pink_2">#FEF3F7</color>
+    <color name="night">#253238</color>
+    <color name="day">#91CBF9</color>
+    <color name="afternoon">#FFA82A</color>
 </resources>

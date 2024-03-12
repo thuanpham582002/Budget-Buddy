@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!--START-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="1" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/night" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <!--01-->
+    <ConstraintSet
+        android:id="@+id/state01"
+        motion:deriveConstraintsFrom="@+id/start">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0413447"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.9166" />
+        <!--        <Constraint-->
+        <!--            android:id="@+id/view_background"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+        <!--            <CustomAttribute-->
+        <!--                motion:attributeName="backgroundColor"-->
+        <!--                motion:customColorValue="@color/night" />-->
+        <!--        </Constraint>-->
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/state01"
+        motion:constraintSetStart="@+id/start" />
+
+    <!--02-->
+
+    <ConstraintSet
+        android:id="@+id/state02"
+        motion:deriveConstraintsFrom="@+id/state01">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.08695"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.8333" />
+        <!--        <Constraint-->
+        <!--            android:id="@+id/view_background"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+        <!--            <CustomAttribute-->
+        <!--                motion:attributeName="backgroundColor"-->
+        <!--                motion:customColorValue="@color/night" />-->
+        <!--        </Constraint>-->
+    </ConstraintSet>
+
+    <!--03-->
+
+    <ConstraintSet
+        android:id="@+id/state03"
+        motion:deriveConstraintsFrom="@+id/state02">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.13"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.75" />
+        <!--        <Constraint-->
+        <!--            android:id="@+id/view_background"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+        <!--            <CustomAttribute-->
+        <!--                motion:attributeName="backgroundColor"-->
+        <!--                motion:customColorValue="@color/night" />-->
+        <!--        </Constraint>-->
+    </ConstraintSet>
+
+    <!--04-->
+
+    <ConstraintSet
+        android:id="@+id/state04"
+        motion:deriveConstraintsFrom="@+id/state03">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.173"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.666" />
+
+        <!--        <Constraint-->
+        <!--            android:id="@+id/view_background"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+        <!--            <CustomAttribute-->
+        <!--                motion:attributeName="backgroundColor"-->
+        <!--                motion:customColorValue="@color/night" />-->
+        <!--        </Constraint>-->
+    </ConstraintSet>
+
+    <!--05-->
+
+    <ConstraintSet
+        android:id="@+id/state05"
+        motion:deriveConstraintsFrom="@+id/state04">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.217"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.583" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.217"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/night" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <!--06-->
+
+    <ConstraintSet
+        android:id="@+id/state06"
+        motion:deriveConstraintsFrom="@+id/state05">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.26"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.26"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.5" />
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/day" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!--07-->
+
+    <ConstraintSet
+        android:id="@+id/state07"
+        motion:deriveConstraintsFrom="@+id/state06">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.2496"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.304"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.416" />
+    </ConstraintSet>
+
+    <!--08-->
+
+    <ConstraintSet
+        android:id="@+id/state08"
+        motion:deriveConstraintsFrom="@+id/state07">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.348"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.333" />
+    </ConstraintSet>
+
+    <!--09-->
+
+    <ConstraintSet
+        android:id="@+id/state09"
+        motion:deriveConstraintsFrom="@+id/state08">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.391"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.25" />
+    </ConstraintSet>
+
+    <!--10-->
+
+    <ConstraintSet
+        android:id="@+id/state10"
+        motion:deriveConstraintsFrom="@+id/state09">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.435"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.1666" />
+    </ConstraintSet>
+
+    <!--11-->
+
+
+    <ConstraintSet
+        android:id="@+id/state11"
+        motion:deriveConstraintsFrom="@+id/state10">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.478"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.0" />
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.478"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+    </ConstraintSet>
+
+    <!--12-->
+
+    <ConstraintSet
+        android:id="@+id/state12"
+        motion:deriveConstraintsFrom="@+id/state11">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.521"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.0" />
+    </ConstraintSet>
+
+    <!--13-->
+
+    <ConstraintSet
+        android:id="@+id/state13"
+        motion:deriveConstraintsFrom="@+id/state12">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.565"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.1666" />
+    </ConstraintSet>
+
+    <!--14-->
+
+    <ConstraintSet
+        android:id="@+id/state14"
+        motion:deriveConstraintsFrom="@+id/state13">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.608"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.25" />
+    </ConstraintSet>
+
+    <!--15-->
+
+    <ConstraintSet
+        android:id="@+id/state15"
+        motion:deriveConstraintsFrom="@+id/state14">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.652"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.333" />
+
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/day" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state16"
+        motion:deriveConstraintsFrom="@+id/state15">
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.695"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.416" />
+
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/afternoon" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!--16-->
+
+    <ConstraintSet
+        android:id="@+id/state17"
+        motion:deriveConstraintsFrom="@+id/state16">
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.74"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.5" />
+
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state18"
+        motion:deriveConstraintsFrom="@+id/state17">
+
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.78"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.78"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.583" />
+    </ConstraintSet>
+
+    <!--19-->
+
+    <ConstraintSet
+        android:id="@+id/state19"
+        motion:deriveConstraintsFrom="@+id/state18">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.826"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.666" />
+
+        <Constraint
+            android:id="@+id/image_view_sun"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.826"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="3" />
+        <Constraint
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/night" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state20"
+        motion:deriveConstraintsFrom="@+id/state19">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.87"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.75" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state21"
+        motion:deriveConstraintsFrom="@+id/state20">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.913"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.8333" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state22"
+        motion:deriveConstraintsFrom="@+id/state21">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.956"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.9166" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/state23"
+        motion:deriveConstraintsFrom="@+id/state22">
+        <Constraint
+            android:id="@+id/image_view_moon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+</MotionScene>

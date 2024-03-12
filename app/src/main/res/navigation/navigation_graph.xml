@@ -20,10 +20,19 @@
         android:id="@+id/moreFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.MoreFragment"
         android:label="fragment_more"
-        tools:layout="@layout/fragment_more" />
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_reminderFragment"
+            app:destination="@id/reminderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/analyticsFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" />
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.ReminderFragment"
+        android:label="fragment_reminder"
+        tools:layout="@layout/fragment_reminder" />
 </navigation>

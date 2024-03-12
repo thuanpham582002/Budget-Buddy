@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
+import com.proptit.budgetbuddy.R
 import com.proptit.budgetbuddy.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {
@@ -25,7 +29,9 @@ class MoreFragment : Fragment() {
     }
 
     private fun initBehavior() {
-
+        binding.imageViewReminder.setOnClickListener{
+            findNavController().navigate(R.id.action_moreFragment_to_reminderFragment)
+        }
     }
 
     override fun onDestroyView() {
