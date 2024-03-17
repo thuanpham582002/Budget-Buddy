@@ -8,4 +8,10 @@
     <string name="reminder">Reminder</string>
     <string name="categories">Categories</string>
     <string name="budget">Budget</string>
+    <string name="new_category">New Category</string>
+    <string name="category_name">Category Name</string>
+    <string name="category_details">Category details</string>
+    <string name="category_info">Category Info</string>
+    <string name="delete_category">Delete category</string>
+    <string name="delete_category_alert">Confirm to delete?</string>
 </resources>
