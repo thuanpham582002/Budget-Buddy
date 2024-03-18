@@ -4,7 +4,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import com.proptit.budgetbuddy.R
 
 object TimeStateMapper {
-    val constraintSetIds = listOf(
+    private val constraintSetIds = listOf(
         R.id.start,
         R.id.state01,
         R.id.state02,
@@ -31,16 +31,6 @@ object TimeStateMapper {
         R.id.state23
     )
 
-    fun getNextState(currentId: Int): Int {
-        return constraintSetIds[(constraintSetIds.indexOf(currentId) + 1)]
-    }
-    fun getPreviouState(currentId: Int): Int {
-        return constraintSetIds[(constraintSetIds.indexOf(currentId) -1)]
-    }
-
-    fun getPostion(id: Int): Int {
-        return constraintSetIds.indexOf(id)
-    }
     fun getState(pos: Int): Int {
         return constraintSetIds[pos]
     }

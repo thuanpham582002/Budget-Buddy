@@ -30,7 +30,7 @@ class MoreFragment : Fragment() {
 
     private fun initBehavior() {
         binding.imageViewReminder.setOnClickListener{
-            findNavController().navigate(R.id.action_moreFragment_to_reminderFragment)
+            findNavController().navigate(R.id.action_moreFragment_to_reminderListFragment)
         }
     }
 
