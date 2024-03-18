@@ -1,36 +1,40 @@
 package com.proptit.budgetbuddy.domain.model
 
-import androidx.room.ColumnInfo
-import androidx.room.PrimaryKey
-import java.lang.StringBuilder
+import java.sql.Time
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 data class Reminder(
     val id: Int = 0,
-    val hour: Int,
-    val minute: Int,
+    val userId: Int,
+    val time: Time,
     val content: String,
-    val mon: Boolean,
-    val tue: Boolean,
-    val wed: Boolean,
-    val thu: Boolean,
-    val fri: Boolean,
-    val sat: Boolean,
-    val sun: Boolean,
     var isActive: Boolean
-){
-    fun getTime(): String{
-        return String.format("%02d:%02d", hour, minute)
+) {
+    fun getTime(): String {
+        val formatter = SimpleDateFormat("HH:mm", Locale.US)
+        return formatter.format(time.time)
     }
 
-    fun getRepeat(): String{
+    fun getHour(): Int {
+        val formatter = SimpleDateFormat("HH", Locale.US)
+        return formatter.format(time.time).toInt()
+    }
+
+    fun getMinute(): Int {
+        val formatter = SimpleDateFormat("mm", Locale.US)
+        return formatter.format(time.time).toInt()
+    }
+
+    fun getRepeat(): String {
         val builder = StringBuilder()
-        if (mon) builder.append(" Mon")
-        if (tue) builder.append(" Tue")
-        if (wed) builder.append(" Wed")
-        if (thu) builder.append(" Thu")
-        if (fri) builder.append(" Fri")
-        if (sat) builder.append(" Sat")
-        if (sun) builder.append(" Sun")
+        builder.append(" Mon")
+        builder.append(" Tue")
+        builder.append(" Wed")
+        builder.append(" Thu")
+        builder.append(" Fri")
+        builder.append(" Sat")
+        builder.append(" Sun")
         return builder.toString()
     }
 }

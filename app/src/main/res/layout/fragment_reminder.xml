@@ -22,7 +22,7 @@
             app:title="@string/reminder"
             app:titleTextColor="@color/white"
             android:background="@color/pink_1"
-            app:menu="@menu/reminder_app_bar"
+            app:menu="@menu/menu_app_bar_reminder"
             app:navigationIconTint="@color/white"
             app:navigationIcon="@drawable/ic_back" />
 

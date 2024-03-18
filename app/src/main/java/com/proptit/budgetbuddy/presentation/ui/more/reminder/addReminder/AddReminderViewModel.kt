@@ -4,10 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.proptit.budgetbuddy.domain.model.Reminder
 import com.proptit.budgetbuddy.domain.repository.ReminderRepository
+import com.proptit.budgetbuddy.presentation.util.TimeConverter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import java.sql.Time
 import javax.inject.Inject
 
 
@@ -21,28 +23,14 @@ class AddReminderViewModel @Inject constructor(
         hour: Int,
         minute: Int,
         content: String,
-        mon: Boolean,
-        tue: Boolean,
-        wed: Boolean,
-        thu: Boolean,
-        fri: Boolean,
-        sat: Boolean,
-        sun: Boolean,
         isActive: Boolean
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             reminderRepository.insertReminder(
                 Reminder(
-                    hour = hour,
-                    minute = minute,
+                    userId = 1,
+                    time = Time(TimeConverter.timeToMilliseconds(hour, minute)),
                     content = content,
-                    mon = mon,
-                    tue = tue,
-                    wed = wed,
-                    thu = thu,
-                    fri = fri,
-                    sat = sat,
-                    sun = sun,
                     isActive = isActive
                 )
             )
@@ -51,7 +39,7 @@ class AddReminderViewModel @Inject constructor(
 
     fun setReminder(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            _reminder.value = reminderRepository.getReminderById(id)
+            _reminder.value = reminderRepository.getReminderById(id, 1)
         }
     }
 
@@ -59,13 +47,6 @@ class AddReminderViewModel @Inject constructor(
         hour: Int,
         minute: Int,
         content: String,
-        mon: Boolean,
-        tue: Boolean,
-        wed: Boolean,
-        thu: Boolean,
-        fri: Boolean,
-        sat: Boolean,
-        sun: Boolean,
         isActive: Boolean
     ) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -73,16 +54,9 @@ class AddReminderViewModel @Inject constructor(
             reminderRepository.updateReminder(
                 Reminder(
                     id = reminder.id,
-                    hour = hour,
-                    minute = minute,
+                    userId = reminder.userId,
+                    time = Time(TimeConverter.timeToMilliseconds(hour, minute)),
                     content = content,
-                    mon = mon,
-                    tue = tue,
-                    wed = wed,
-                    thu = thu,
-                    fri = fri,
-                    sat = sat,
-                    sun = sun,
                     isActive = isActive
                 )
             )

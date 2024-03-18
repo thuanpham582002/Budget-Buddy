@@ -10,7 +10,7 @@ import com.proptit.budgetbuddy.databinding.FragmentReminderDialogBinding
 
 class ReminderDialogFragment : DialogFragment() {
     private var _binding: FragmentReminderDialogBinding? = null
-    private val binding get()= _binding!!
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -38,7 +38,7 @@ class ReminderDialogFragment : DialogFragment() {
         val adapter = ViewPagerAdapter(this)
         binding.viewPagerReminder.adapter = adapter
         TabLayoutMediator(binding.tabLayoutReminder, binding.viewPagerReminder) { tab, position ->
-            when(position){
+            when (position) {
                 0 -> tab.text = "Week"
                 1 -> tab.text = "Month"
                 2 -> tab.text = "Everyday"

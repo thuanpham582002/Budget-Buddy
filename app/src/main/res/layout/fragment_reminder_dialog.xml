@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:clipToOutline="true"
     android:backgroundTint="@color/design_default_color_background"
-    android:background="@drawable/rounded_top_corner"
+    android:background="@drawable/shape_layout_night"
     tools:context=".presentation.ui.more.reminder.addReminder.ReminderDialogFragment"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:backgroundTint="@color/pink_1"
-        android:background="@drawable/rounded_top_corner"
+        android:background="@drawable/shape_layout_night"
         android:clipToOutline="true"
         android:padding="16dp"
         android:layout_height="wrap_content">

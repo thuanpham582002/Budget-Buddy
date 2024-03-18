@@ -1,14 +1,13 @@
 package com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.proptit.budgetbuddy.R
 
 class MonthFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

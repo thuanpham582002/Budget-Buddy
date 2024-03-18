@@ -59,7 +59,7 @@
     </style>
 
     <style name="time_picker_view_reminder">
-        <item name="android:background">@drawable/rounded_top_corner</item>
+        <item name="android:background">@drawable/shape_layout_night</item>
     </style>
 
     <style name="constraint_layout_item_more">

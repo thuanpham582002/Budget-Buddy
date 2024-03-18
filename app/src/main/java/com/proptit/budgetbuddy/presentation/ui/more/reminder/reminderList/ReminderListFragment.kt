@@ -1,12 +1,11 @@
 package com.proptit.budgetbuddy.presentation.ui.more.reminder.reminderList
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -54,17 +53,24 @@ class ReminderListFragment : Fragment() {
         }
 
         ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-            override fun onMove(recyclerView: androidx.recyclerview.widget.RecyclerView, viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, target: androidx.recyclerview.widget.RecyclerView.ViewHolder): Boolean {
+            override fun onMove(
+                recyclerView: androidx.recyclerview.widget.RecyclerView,
+                viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
+                target: androidx.recyclerview.widget.RecyclerView.ViewHolder
+            ): Boolean {
                 return false
             }
 
-            override fun onSwiped(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, direction: Int) {
+            override fun onSwiped(
+                viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
+                direction: Int
+            ) {
                 val position = viewHolder.adapterPosition
                 val reminder = reminderAdapter.getReminder(position)
                 reminderViewModel.deleteReminder(reminder)
                 view?.let {
-                    Snackbar.make(it,"Reminder Deleted",Snackbar.LENGTH_LONG).apply {
-                        setAction("UNDO"){
+                    Snackbar.make(it, "Reminder Deleted", Snackbar.LENGTH_LONG).apply {
+                        setAction("UNDO") {
                             reminderViewModel.insertReminder(reminder)
                         }
                         show()
@@ -75,7 +81,7 @@ class ReminderListFragment : Fragment() {
     }
 
     private fun onSwitchChanged(): (Reminder, Boolean) -> Unit {
-        return {reminder, isActive ->
+        return { reminder, isActive ->
             reminderViewModel.updateReminder(reminder, isActive)
         }
     }
@@ -83,7 +89,10 @@ class ReminderListFragment : Fragment() {
     private fun onItemClick(): (Int) -> Unit {
         return {
             val bundle = bundleOf("reminderId" to it)
-            findNavController().navigate(R.id.action_reminderListFragment_to_addReminderFragment, bundle)
+            findNavController().navigate(
+                R.id.action_reminderListFragment_to_addReminderFragment,
+                bundle
+            )
         }
     }
 

@@ -1,11 +1,11 @@
 package com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import com.proptit.budgetbuddy.databinding.FragmentWeekBinding
 
@@ -31,45 +31,45 @@ class WeekFragment : Fragment() {
 
     private fun onClickListener() {
         binding.buttonMonday.setOnClickListener {
-            if (binding.buttonMonday.isChecked){
+            if (binding.buttonMonday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("monday" to true))
-            }else setFragmentResult("requestKey", bundleOf("monday" to false))
+            } else setFragmentResult("requestKey", bundleOf("monday" to false))
         }
 
         binding.buttonTuesday.setOnClickListener {
-            if (binding.buttonTuesday.isChecked){
+            if (binding.buttonTuesday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("tuesday" to true))
-            }else setFragmentResult("requestKey", bundleOf("tuesday" to false))
+            } else setFragmentResult("requestKey", bundleOf("tuesday" to false))
         }
 
         binding.buttonWednesday.setOnClickListener {
-            if (binding.buttonWednesday.isChecked){
+            if (binding.buttonWednesday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("wednesday" to true))
-            }else setFragmentResult("requestKey", bundleOf("wednesday" to false))
+            } else setFragmentResult("requestKey", bundleOf("wednesday" to false))
         }
 
         binding.buttonThursday.setOnClickListener {
-            if (binding.buttonThursday.isChecked){
+            if (binding.buttonThursday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("thursday" to true))
-            }else setFragmentResult("requestKey", bundleOf("thursday" to false))
+            } else setFragmentResult("requestKey", bundleOf("thursday" to false))
         }
 
         binding.buttonFriday.setOnClickListener {
-            if (binding.buttonFriday.isChecked){
+            if (binding.buttonFriday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("friday" to true))
-            }else setFragmentResult("requestKey", bundleOf("friday" to false))
+            } else setFragmentResult("requestKey", bundleOf("friday" to false))
         }
 
         binding.buttonSaturday.setOnClickListener {
-            if (binding.buttonSaturday.isChecked){
+            if (binding.buttonSaturday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("saturday" to true))
-            }else setFragmentResult("requestKey", bundleOf("saturday" to false))
+            } else setFragmentResult("requestKey", bundleOf("saturday" to false))
         }
 
         binding.buttonSunday.setOnClickListener {
-            if (binding.buttonSunday.isChecked){
+            if (binding.buttonSunday.isChecked) {
                 setFragmentResult("requestKey", bundleOf("sunday" to true))
-            }else setFragmentResult("requestKey", bundleOf("sunday" to false))
+            } else setFragmentResult("requestKey", bundleOf("sunday" to false))
         }
     }
 

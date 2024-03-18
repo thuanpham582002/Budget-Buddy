@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.proptit.budgetbuddy.R
 import com.proptit.budgetbuddy.databinding.FragmentReminderBinding
-import com.proptit.budgetbuddy.presentation.ui.more.reminder.reminderList.ReminderListViewModel
 import com.proptit.budgetbuddy.presentation.util.TimeStateMapper
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -70,38 +68,25 @@ class AddReminderFragment : Fragment() {
         binding.appBarReminder.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.done -> {
-                    if(isUpdate){
+                    if (isUpdate) {
                         addReminderViewModel.updateReminder(
                             binding.textViewHour.text.toString().toInt(),
                             binding.textViewMinute.text.toString().toInt(),
                             "check content",
                             true,
-                            true,
-                            true,
-                            true,
-                            true,
-                            true,
-                            true,
-                            true
                         )
-                    }else{
+                    } else {
                         addReminderViewModel.addReminder(
                             binding.textViewHour.text.toString().toInt(),
                             binding.textViewMinute.text.toString().toInt(),
                             "check content",
-                            mon = true,
-                            tue = true,
-                            wed = true,
-                            thu = true,
-                            fri = true,
-                            sat = true,
-                            sun = true,
                             isActive = true
                         )
                     }
                     findNavController().popBackStack()
                     true
                 }
+
                 else -> false
             }
         }
@@ -132,7 +117,8 @@ class AddReminderFragment : Fragment() {
                 motionLayout.transitionToState(nextState)
                 binding.textViewHour.text = String.format("%02d", time)
             } else {
-                binding.textViewMinute.text = String.format("%02d", binding.sliderTime.value.toInt())
+                binding.textViewMinute.text =
+                    String.format("%02d", binding.sliderTime.value.toInt())
             }
         }
 
@@ -140,21 +126,21 @@ class AddReminderFragment : Fragment() {
 
     private fun receiveReminder() {
         val id = arguments?.getInt("reminderId")
-        if(id != null){
+        if (id != null) {
             addReminderViewModel.setReminder(id)
             viewLifecycleOwner.lifecycleScope.launch {
                 addReminderViewModel.reminder.collect {
                     if (it != null) {
                         isUpdate = true
-                        binding.textViewHour.text = String.format("%02d", it.hour)
-                        binding.textViewMinute.text = String.format("%02d", it.minute)
-                        binding.sliderTime.value = it.hour.toFloat() * 4
+                        binding.textViewHour.text = String.format("%02d", it.getHour())
+                        binding.textViewMinute.text = String.format("%02d", it.getMinute())
+                        binding.sliderTime.value = it.getHour().toFloat() * 4
                     }
                 }
             }
         }
-
     }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
