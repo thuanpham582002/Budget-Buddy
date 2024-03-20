@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="header_1">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="body_1">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">18sp</item>
@@ -24,11 +29,6 @@
     <style name="body_5">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="header_1">
-        <item name="android:fontFamily">@font/roboto_bold</item>
-        <item name="android:textSize">48sp</item>
     </style>
 
     <style name="header_2">
@@ -67,6 +67,14 @@
         <item name="android:padding">16dp</item>
     </style>
 
+    <style name="button_dialog" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textAppearance">@style/header_1</item>
+        <item name="android:textColor">@color/pink_1</item>
+    </style>
+
     <style name="image_view_time_picker">
         <item name="android:layout_width">64dp</item>
         <item name="android:layout_height">64dp</item>
@@ -80,5 +88,4 @@
         <item name="colorPrimary">@color/pink_1</item>
         <item name="colorOutline">@color/light_gray</item>
     </style>
-
 </resources>

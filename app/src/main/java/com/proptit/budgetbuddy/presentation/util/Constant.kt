@@ -8,17 +8,18 @@ object Constant {
     const val CATEGORY_TYPE = "category_type"
     const val CURRENT_TAB_POSITION = "currentTabPosition"
     private val categoryIconLists = listOf<String>(
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_food}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_education}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_afro_pick}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_baguette}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_detective_hat}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_phone}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_art_prices}",
-        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_bowling}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_food}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_education}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_afro_pick}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_baguette}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_detective_hat}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_phone}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_art_prices}",
+        "android.resource://${BuildConfig.APPLICATION_ID}/drawable/" + "${R.drawable.ic_bowling}",
     )
+    const val BUDGET_ID = "budget_id"
 
-    fun getCategoryIconLists(): List<String>{
+    fun getCategoryIconLists(): List<String> {
         return categoryIconLists.toList()
     }
 }

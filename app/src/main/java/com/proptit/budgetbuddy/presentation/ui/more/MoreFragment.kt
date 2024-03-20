@@ -27,6 +27,9 @@ class MoreFragment : Fragment() {
     }
 
     private fun initBehavior() {
+        binding.cardViewBudget.setOnClickListener {
+            findNavController().navigate(R.id.action_moreFragment_to_budgetFragment)
+        }
         binding.cardViewCategories.setOnClickListener {
             findNavController().navigate(R.id.action_moreFragment_to_categoryFragment)
         }

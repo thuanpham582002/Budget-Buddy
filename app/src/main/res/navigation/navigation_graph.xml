@@ -23,6 +23,10 @@
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" >
         <action
+            android:id="@+id/action_moreFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
+
+        <action
             android:id="@+id/action_moreFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
         <action
@@ -35,6 +39,21 @@
         android:name="com.proptit.budgetbuddy.presentation.ui.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" />
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.budget.BudgetFragment"
+        android:label="fragment_budget"
+        tools:layout="@layout/fragment_budget" >
+        <action
+            android:id="@+id/action_budgetFragment_to_updateBudgetDialogFragment"
+            app:destination="@id/updateBudgetDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/updateBudgetDialogFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.budget.edit.EditBudgetDialog"
+        android:label="fragment_update_budget_dialog"
+        tools:layout="@layout/dialog_update_budget" />
 
     <fragment
         android:id="@+id/addReminderFragment"
