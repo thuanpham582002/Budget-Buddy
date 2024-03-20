@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.proptit.budgetbuddy.R
 import com.proptit.budgetbuddy.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {
@@ -25,7 +27,9 @@ class MoreFragment : Fragment() {
     }
 
     private fun initBehavior() {
-
+        binding.cardViewBudget.setOnClickListener {
+            findNavController().navigate(R.id.action_moreFragment_to_budgetFragment)
+        }
     }
 
     override fun onDestroyView() {

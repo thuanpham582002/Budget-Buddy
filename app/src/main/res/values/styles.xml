@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="header_1">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="body_1">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">18sp</item>
@@ -51,5 +56,13 @@
     <style name="constraint_layout_item_more">
         <item name="android:background">@color/pink_2</item>
         <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="button_dialog" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textAppearance">@style/header_1</item>
+        <item name="android:textColor">@color/pink_1</item>
     </style>
 </resources>

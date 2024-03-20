@@ -8,4 +8,10 @@
     <string name="reminder">Reminder</string>
     <string name="categories">Categories</string>
     <string name="budget">Budget</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="annually">Annually</string>
+    <string name="input_budget">Input Budget</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
 </resources>
