@@ -14,6 +14,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
+import com.proptit.budgetbuddy.R
 import com.proptit.budgetbuddy.databinding.FragmentAddNewCategoryBinding
 import com.proptit.budgetbuddy.domain.model.CategoryType
 import com.proptit.budgetbuddy.presentation.ui.more.category.CategoryIconAdapter
@@ -48,11 +49,16 @@ class AddNewCategoryFragment : Fragment() {
 
         }
 
+        binding.imageViewBack.setOnClickListener {
+            val type = arguments?.getInt(Constant.CATEGORY_TYPE)!!
+            findNavController().previousBackStackEntry?.savedStateHandle?.set(Constant.CURRENT_TAB_POSITION, type)
+            findNavController().popBackStack()
+        }
+
         binding.imageViewDone.setOnClickListener {
-            val categoryName = binding.editTextCategoryName.text.toString()
+            val categoryName = binding.textInputEditText.text.toString()
             if (categoryName.isEmpty()) {
-                Toast.makeText(requireContext(), "Category name is empty", Toast.LENGTH_SHORT)
-                    .show()
+                binding.editTextCategoryName.error = getString(R.string.please_enter_category_name)
             } else {
                 val type = arguments?.getInt(Constant.CATEGORY_TYPE)!!
                 val categoryType = when (type) {
@@ -64,7 +70,8 @@ class AddNewCategoryFragment : Fragment() {
                     addNewCategoryViewModel.iconUrl.value,
                     categoryType
                 )
-//                findNavController().previousBackStackEntry?.savedStateHandle?.set("currentTabPosition", type)
+                binding.editTextCategoryName.error = null
+                findNavController().previousBackStackEntry?.savedStateHandle?.set(Constant.CURRENT_TAB_POSITION, type)
                 findNavController().popBackStack()
             }
         }

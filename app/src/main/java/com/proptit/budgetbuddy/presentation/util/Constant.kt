@@ -6,6 +6,7 @@ import com.proptit.budgetbuddy.R
 object Constant {
     const val CATEGORY_ID = "category_id"
     const val CATEGORY_TYPE = "category_type"
+    const val CURRENT_TAB_POSITION = "currentTabPosition"
     private val categoryIconLists = listOf<String>(
         "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_food}",
         "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"+"${R.drawable.ic_education}",

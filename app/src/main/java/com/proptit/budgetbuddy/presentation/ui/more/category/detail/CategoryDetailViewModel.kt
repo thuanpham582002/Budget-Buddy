@@ -20,7 +20,6 @@ class CategoryDetailViewModel @Inject constructor(
 
     private val _category = MutableStateFlow<Category?>(null)
     val category = _category.asStateFlow()
-
     fun setCategory(categoryId: Int) {
         val userId = sharePref.get("user_id", -1)
         if (userId != -1) {
@@ -31,6 +30,4 @@ class CategoryDetailViewModel @Inject constructor(
             }
         }
     }
-
-
 }

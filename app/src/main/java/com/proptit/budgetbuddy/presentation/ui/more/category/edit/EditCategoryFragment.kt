@@ -2,6 +2,7 @@ package com.proptit.budgetbuddy.presentation.ui.more.category.edit
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,13 +58,12 @@ class EditCategoryFragment : Fragment() {
             MaterialAlertDialogBuilder(requireContext()).apply {
                 setTitle(getString(R.string.delete_category))
                 setMessage(getString(R.string.delete_category_alert))
-                setPositiveButton("OK") { _, _ ->
+                setPositiveButton(getString(R.string.ok)) { _, _ ->
                     editCategoryViewModel.deleteCategory()
                     findNavController().popBackStack()
                     findNavController().popBackStack()
                 }
-
-                setNegativeButton("Cancel") { _, _ -> }
+                setNegativeButton(getString(R.string.cancel)) { _, _ -> }
                 show()
             }
         }
@@ -91,7 +91,6 @@ class EditCategoryFragment : Fragment() {
             layoutManager = GridLayoutManager(requireContext(), 4)
             adapter = categoryIconAdapter
         }
-
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 categoryIconAdapter.setCategoryIcons(Constant.getCategoryIconLists())

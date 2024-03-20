@@ -50,7 +50,6 @@ class CategoryDetailFragment : Fragment() {
                 R.id.action_categoryDetailFragment_to_editCategoryFragment,
                 bundle
             )
-
         }
     }
 
@@ -68,12 +67,10 @@ class CategoryDetailFragment : Fragment() {
     private fun receiveCategory() {
         val categoryId = arguments?.getInt(Constant.CATEGORY_ID)!!
         categoryDetailViewModel.setCategory(categoryId)
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
 }

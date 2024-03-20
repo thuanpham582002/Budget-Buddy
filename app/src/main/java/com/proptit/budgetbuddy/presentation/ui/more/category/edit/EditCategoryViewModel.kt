@@ -24,7 +24,6 @@ class EditCategoryViewModel @Inject constructor(
 
     private val _iconUrl = MutableStateFlow<String>("")
     val iconUrl = _iconUrl.asStateFlow()
-
     fun setCategory(categoryId: Int) {
         val userId = sharePref.get("user_id", -1)
         if (userId != -1) {

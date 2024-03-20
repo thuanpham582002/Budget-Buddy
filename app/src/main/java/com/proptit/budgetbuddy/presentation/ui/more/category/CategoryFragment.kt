@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.proptit.budgetbuddy.R
 import com.proptit.budgetbuddy.databinding.FragmentCategoryBinding
@@ -26,14 +27,12 @@ class CategoryFragment : Fragment() {
 
     private var _binding: FragmentCategoryBinding? = null
     private val binding get() = _binding!!
-
     private val categoryViewModel: CategoryViewModel by viewModels()
     private var currentTabPosition = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.d("TAG33", "onCreateView: ")
         _binding = FragmentCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,10 +52,14 @@ class CategoryFragment : Fragment() {
                 bundle
             )
         }
+
+        binding.imageViewBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun initTabLayout() {
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Int>("currentTabPosition")
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Int>(Constant.CURRENT_TAB_POSITION)
             ?.observe(viewLifecycleOwner) {
                 binding.tabLayout.getTabAt(it)?.select()
                 currentTabPosition = it
@@ -64,8 +67,6 @@ class CategoryFragment : Fragment() {
         binding.tabLayout.apply {
             this.selectTab(this.getTabAt(currentTabPosition))
             changeTab(currentTabPosition)
-
-            Log.d("TAG33", "selected: ${currentTabPosition}")
             addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     currentTabPosition = tab?.position!!
@@ -96,8 +97,6 @@ class CategoryFragment : Fragment() {
     }
 
     private fun initRecyclerViewCategories() {
-        val dividerItemDecoration =
-            DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
         val categoryAdapter = CategoryAdapter(
             onItemClick = {
                 val bundle = bundleOf(Constant.CATEGORY_ID to it)
@@ -105,25 +104,32 @@ class CategoryFragment : Fragment() {
                     R.id.action_categoryFragment_to_categoryDetailFragment,
                     bundle
                 )
+            },
+            onDeleteClick = { categoryId ->
+                MaterialAlertDialogBuilder(requireContext()).apply {
+                    setTitle(getString(R.string.delete_category))
+                    setMessage(getString(R.string.delete_category_alert))
+                    setPositiveButton(getString(R.string.ok)) { _, _ ->
+                        categoryViewModel.deleteCategory(categoryId)
+                    }
+                    setNegativeButton(getString(R.string.cancel)) { _, _ -> }
+                    show()
+                }
             }
         )
 
         binding.recyclerViewCategory.apply {
-            addItemDecoration(dividerItemDecoration)
             adapter = categoryAdapter
         }
-
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 categoryViewModel.categories.collect {
                     categoryAdapter.setCategories(it)
-
                 }
             }
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
