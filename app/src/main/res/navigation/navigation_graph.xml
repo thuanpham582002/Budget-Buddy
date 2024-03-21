@@ -20,10 +20,37 @@
         android:id="@+id/moreFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.MoreFragment"
         android:label="fragment_more"
-        tools:layout="@layout/fragment_more" />
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_reminderListFragment"
+            app:destination="@id/reminderListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/analyticsFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" />
+    <fragment
+        android:id="@+id/addReminderFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder.AddReminderFragment"
+        android:label="fragment_reminder"
+        tools:layout="@layout/fragment_reminder" >
+        <action
+            android:id="@+id/action_reminderFragment_to_reminderDialogFragment"
+            app:destination="@id/reminderDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminderListFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.reminderList.ReminderListFragment"
+        android:label="fragment_reminder_list"
+        tools:layout="@layout/fragment_reminder_list" >
+        <action
+            android:id="@+id/action_reminderListFragment_to_addReminderFragment"
+            app:destination="@id/addReminderFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/reminderDialogFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder.ReminderDialogFragment"
+        android:label="fragment_reminder_dialog"
+        tools:layout="@layout/fragment_reminder_dialog" />
 </navigation>
