@@ -1,10 +1,13 @@
 package com.proptit.budgetbuddy.di
 
 import com.proptit.budgetbuddy.data.repository.AuthRepositoryImpl
+import com.proptit.budgetbuddy.data.repository.CategoryRepositoryImpl
 import com.proptit.budgetbuddy.data.repository.UserRepositoryImpl
+import com.proptit.budgetbuddy.data.source.local.roomdb.dao.CategoryDao
 import com.proptit.budgetbuddy.data.source.local.roomdb.dao.UserDao
 import com.proptit.budgetbuddy.data.source.local.sharedpref.BudgetBuddySharedPref
 import com.proptit.budgetbuddy.domain.repository.AuthRepository
+import com.proptit.budgetbuddy.domain.repository.CategoryRepository
 import com.proptit.budgetbuddy.domain.repository.UserRepository
 import dagger.Module
 import dagger.Provides
@@ -25,5 +28,11 @@ class RepositoryModule {
     @Singleton
     fun provideAuthRepository(sharedPref: BudgetBuddySharedPref): AuthRepository {
         return AuthRepositoryImpl(sharedPref)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCategoryRepository(categoryDao: CategoryDao): CategoryRepository {
+        return CategoryRepositoryImpl(categoryDao)
     }
 }
