@@ -13,6 +13,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.proptit.budgetbuddy.R
@@ -21,6 +23,7 @@ import com.proptit.budgetbuddy.domain.model.CategoryType
 import com.proptit.budgetbuddy.presentation.util.Constant
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.util.Collections
 
 @AndroidEntryPoint
 class CategoryFragment : Fragment() {
@@ -42,6 +45,39 @@ class CategoryFragment : Fragment() {
         initTabLayout()
         initRecyclerViewCategories()
         initBehavior()
+        handleSlideCategory()
+    }
+
+    private fun handleSlideCategory() {
+        val helper = ItemTouchHelper(object: ItemTouchHelper.Callback(){
+            override fun getMovementFlags(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder
+            ): Int {
+                return makeMovementFlags(
+                    ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+                    ItemTouchHelper.ACTION_STATE_IDLE
+                )
+            }
+
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                val draggedItemIndex = viewHolder.adapterPosition
+                val targetItemIndex = target.adapterPosition
+                Collections.swap(categoryViewModel.categories.value, draggedItemIndex, targetItemIndex)
+                recyclerView.adapter?.notifyItemMoved(draggedItemIndex, targetItemIndex)
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+//                Todo
+            }
+        })
+
+        helper.attachToRecyclerView(binding.recyclerViewCategory)
     }
 
     private fun initBehavior() {
