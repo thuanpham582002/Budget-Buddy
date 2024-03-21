@@ -71,6 +71,9 @@ dependencies {
 
     // Glide
     implementation(libs.glide)
+
+    //swipe layout
+    implementation(libs.swipelayout)
 }
 
 kapt {
