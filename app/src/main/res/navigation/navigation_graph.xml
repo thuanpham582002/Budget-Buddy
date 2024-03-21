@@ -16,20 +16,26 @@
         android:name="com.proptit.budgetbuddy.presentation.ui.wallet.WalletFragment"
         android:label="fragment_wallet"
         tools:layout="@layout/fragment_wallet" />
+
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" >
         <action
+            android:id="@+id/action_moreFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
             android:id="@+id/action_moreFragment_to_reminderListFragment"
             app:destination="@id/reminderListFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/analyticsFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.analytics.AnalyticsFragment"
         android:label="fragment_analytics"
         tools:layout="@layout/fragment_analytics" />
+
     <fragment
         android:id="@+id/addReminderFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder.AddReminderFragment"
@@ -39,6 +45,7 @@
             android:id="@+id/action_reminderFragment_to_reminderDialogFragment"
             app:destination="@id/reminderDialogFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/reminderListFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.reminderList.ReminderListFragment"
@@ -48,9 +55,45 @@
             android:id="@+id/action_reminderListFragment_to_addReminderFragment"
             app:destination="@id/addReminderFragment" />
     </fragment>
+
     <dialog
         android:id="@+id/reminderDialogFragment"
         android:name="com.proptit.budgetbuddy.presentation.ui.more.reminder.addReminder.ReminderDialogFragment"
         android:label="fragment_reminder_dialog"
         tools:layout="@layout/fragment_reminder_dialog" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.category.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_addNewCategoryFragment"
+            app:destination="@id/addNewCategoryFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNewCategoryFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.category.add.AddNewCategoryFragment"
+        android:label="fragment_add_new_category"
+        tools:layout="@layout/fragment_add_new_category" />
+
+    <fragment
+        android:id="@+id/categoryDetailFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.category.detail.CategoryDetailFragment"
+        android:label="fragment_category_detail"
+        tools:layout="@layout/fragment_category_detail" >
+        <action
+            android:id="@+id/action_categoryDetailFragment_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editCategoryFragment"
+        android:name="com.proptit.budgetbuddy.presentation.ui.more.category.edit.EditCategoryFragment"
+        android:label="fragment_edit_category"
+        tools:layout="@layout/fragment_edit_category" />
 </navigation>

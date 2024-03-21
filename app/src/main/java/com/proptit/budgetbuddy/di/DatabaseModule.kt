@@ -3,6 +3,7 @@ package com.proptit.budgetbuddy.di
 import android.app.Application
 import androidx.room.Room
 import com.proptit.budgetbuddy.data.source.local.roomdb.BudgetBuddyDatabase
+import com.proptit.budgetbuddy.data.source.local.roomdb.dao.CategoryDao
 import com.proptit.budgetbuddy.data.source.local.roomdb.dao.ReminderDao
 import com.proptit.budgetbuddy.data.source.local.roomdb.dao.UserDao
 import dagger.Module
@@ -34,5 +35,11 @@ class DatabaseModule {
     @Singleton
     fun provideReminderDao(database: BudgetBuddyDatabase): ReminderDao {
         return database.reminderDao
+    }
+
+    @Provides
+    @Singleton
+    fun provideCategoryDao(database: BudgetBuddyDatabase): CategoryDao {
+        return database.categoryDao
     }
 }
