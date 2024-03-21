@@ -34,6 +34,8 @@ abstract class BudgetBuddyDatabase : RoomDatabase() {
         val callback = object : Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
+                DatabaseQueryExecutor.executeDefaultUser(db)
+                DatabaseQueryExecutor.executeTriggerInsertBudgetsAfterCategoryInsert(db)
                 db.execSQL("INSERT INTO users (name, date_of_birth, email, avatar_url, balance) VALUES ('Example', '1041354000', 'example@gmail.com', '', 0)")
                 val triggerInsertBudgetsAfterCategoryInsert = """
                     CREATE TRIGGER insert_budgets_after_category_insert

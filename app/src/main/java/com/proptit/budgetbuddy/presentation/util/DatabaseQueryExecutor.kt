@@ -5,6 +5,24 @@ import com.proptit.budgetbuddy.BuildConfig
 import com.proptit.budgetbuddy.R
 
 object DatabaseQueryExecutor {
+    fun executeDefaultUser(db: SupportSQLiteDatabase) {
+        db.execSQL("INSERT INTO users (name, date_of_birth, email, avatar_url, balance) VALUES ('Example', '1041354000', 'example@gmail.com', '', 0)")
+    }
+
+    fun executeTriggerInsertBudgetsAfterCategoryInsert(db: SupportSQLiteDatabase) {
+        val triggerInsertBudgetsAfterCategoryInsert = """
+            CREATE TRIGGER insert_budgets_after_category_insert
+            AFTER INSERT ON categories
+            WHEN NEW.type = 0
+            BEGIN
+                INSERT INTO budgets(category_id, amount, type) VALUES (NEW.id, NULL, 0);
+                INSERT INTO budgets(category_id, amount, type) VALUES (NEW.id, NULL, 1);
+                INSERT INTO budgets(category_id, amount, type) VALUES (NEW.id, NULL, 2);
+            END
+        """.trimIndent()
+        db.execSQL(triggerInsertBudgetsAfterCategoryInsert)
+    }
+
     fun executeDefaultCategory(db: SupportSQLiteDatabase) {
         val path = "android.resource://${BuildConfig.APPLICATION_ID}/drawable/"
         db.execSQL("INSERT INTO categories (user_id, name, icon_url, type) VALUES (1, 'Food', '$path${R.drawable.ic_food}', 0)")
