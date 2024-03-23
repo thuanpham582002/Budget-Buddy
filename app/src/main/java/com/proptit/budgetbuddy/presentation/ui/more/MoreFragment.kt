@@ -33,6 +33,9 @@ class MoreFragment : Fragment() {
         binding.imageViewReminder.setOnClickListener{
             findNavController().navigate(R.id.action_moreFragment_to_reminderListFragment)
         }
+        binding.cardViewBudget.setOnClickListener {
+            findNavController().navigate(R.id.action_moreFragment_to_budgetFragment)
+        }
     }
 
     override fun onDestroyView() {
