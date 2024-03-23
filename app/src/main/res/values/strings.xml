@@ -38,4 +38,8 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
     <string name="choose_cycle_infinity">Choose cycle (infinity)</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="annually">Annually</string>
+    <string name="input_budget">Input Budget</string>
 </resources>
