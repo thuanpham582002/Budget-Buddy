@@ -1,7 +1,7 @@
 package com.proptit.budgetbuddy.di
 
 import android.app.Application
-import com.proptit.budgetbuddy.data.source.local.sharedpref.BudgetBuddySharedPref
+import com.proptit.data.source.local.sharedpref.BudgetBuddySharedPref
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
